@@ -3,6 +3,8 @@ import { SearchProps } from "./Search.props";
 import styles from "./Search.module.css";
 import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
+import dbConnect from "@/libs/mongodb";
+import Product from "@/models/Product";
 
 export default function Search({ ...props }: SearchProps): JSX.Element {
   const router = useRouter();
@@ -50,9 +52,3 @@ export default function Search({ ...props }: SearchProps): JSX.Element {
     </>
   );
 }
-
-const getData = async (search: string) => {
-  const res = await fetch(`http://localhost:3000/api/serach?q=${search}`);
-  const data = await JSON.parse(JSON.stringify(res));
-  return data;
-};
