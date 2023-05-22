@@ -50,3 +50,9 @@ export default function Search({ ...props }: SearchProps): JSX.Element {
     </>
   );
 }
+
+const getData = async (search: string) => {
+  const res = await fetch(`http://localhost:3000/api/serach?q=${search}`);
+  const data = await JSON.parse(JSON.stringify(res));
+  return data;
+};
