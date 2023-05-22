@@ -1,3 +1,4 @@
+"use client";
 import Product, { IProduct } from "@/models/Product";
 import dbConnect from "@/libs/mongodb";
 import ProductItem from "@/components/ProductItem/ProductItem";
@@ -5,7 +6,6 @@ import ProductItem from "@/components/ProductItem/ProductItem";
 export default async function Search(ctx: any) {
   const search = ctx.searchParams.q;
   const data = await getData(search);
-  console.log(data.product);
   const render = data.product.map((item: any) => {
     return (
       // eslint-disable-next-line react/jsx-key

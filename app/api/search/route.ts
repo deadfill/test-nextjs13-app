@@ -5,7 +5,6 @@ import { NextResponse } from "next/server";
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const search = searchParams.get("q") as string;
-  console.log(search)
   try {
     await dbConnect();
     const product = await Product.find({ $text : { $search : search }});
