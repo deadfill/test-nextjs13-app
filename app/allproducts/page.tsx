@@ -36,11 +36,11 @@ export default async function Index() {
             <option value="toprated">По рейтингу</option>
           </select>
         </div>
-        {/* <div className={styles.products_list}>
+        <div className={styles.products_list}>
           {data.map((item: any) => (
             <ProductItem data={item} key={item._id}></ProductItem>
           ))}
-        </div> */}
+        </div>
       </div>
       <div>
         <div>
